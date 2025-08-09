@@ -1,0 +1,29 @@
+{
+  "routes": [
+    {
+      "route": "/*",
+      "serve": "/404.html",
+      "statusCode": 404
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": [
+      "*.{css,scss,sass}",
+      "*.{js,jsx}",
+      "*.{ts,tsx}",
+      "*.{png,jpg,jpeg,gif,bmp}",
+      "*.{svg}",
+      "*.ico",
+      "*.json"
+    ]
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".js": "text/javascript",
+    ".css": "text/css"
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  }
+}
