@@ -103,7 +103,7 @@ export default function Pricing() {
               key={tier.name}
               className={`relative rounded-2xl bg-white p-8 shadow-lg ${tier.color} ${
                 tier.popular ? 'scale-105' : ''
-              }`}
+              } flex flex-col h-full`}
             >
               {/* Popular Badge */}
               {tier.popular && (
@@ -142,7 +142,7 @@ export default function Pricing() {
               </div>
 
               {/* Features */}
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-3 flex-grow">
                 {tier.features.map((feature, index) => (
                   <li key={index} className="flex items-start">
                     <CheckIcon className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />

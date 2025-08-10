@@ -238,7 +238,7 @@ export default function UniversitiesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {universities.map((university) => (
-              <div key={university.name} className="card p-0 overflow-hidden group">
+              <div key={university.name} className="card p-0 overflow-hidden group flex flex-col h-full">
                 {/* Header */}
                 <div className={`p-6 bg-gradient-to-r ${university.color} text-white`}>
                   <div className="flex items-start justify-between">
@@ -257,7 +257,7 @@ export default function UniversitiesPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   {/* Key Stats */}
                   <div className="grid grid-cols-3 gap-4 mb-6 text-center">
                     <div className="bg-gray-50 rounded-lg p-3">
@@ -275,7 +275,7 @@ export default function UniversitiesPage() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-6">{university.description}</p>
+                  <p className="text-gray-600 mb-6 flex-grow">{university.description}</p>
 
                   {/* Key Traits */}
                   <div className="mb-6">
@@ -308,7 +308,7 @@ export default function UniversitiesPage() {
                   {/* CTA */}
                   <Link
                     href={`/universities/${university.slug}`}
-                    className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 group-hover:shadow-lg"
+                    className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 group-hover:shadow-lg mt-auto"
                   >
                     <DocumentTextIcon className="w-4 h-4 mr-2" />
                     View Complete Strategy Guide

@@ -132,7 +132,7 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {featuredResources.map((resource) => (
-              <div key={resource.title} className="card p-6 group">
+              <div key={resource.title} className="card p-6 group flex flex-col h-full">
                 <div className="aspect-video bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg mb-6 flex items-center justify-center">
                   <AcademicCapIcon className="w-16 h-16 text-primary-400" />
                 </div>
@@ -145,7 +145,7 @@ export default function ResourcesPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {resource.title}
                 </h3>
-                <p className="text-gray-600 mb-4">{resource.description}</p>
+                <p className="text-gray-600 mb-4 flex-grow">{resource.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {resource.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded">
@@ -155,7 +155,7 @@ export default function ResourcesPage() {
                 </div>
                 <Link
                   href="#"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
+                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium mt-auto"
                 >
                   Read More
                   <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -180,7 +180,7 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {resourceCategories.map((category) => (
-              <div key={category.title} className="card p-8">
+              <div key={category.title} className="card p-8 flex flex-col h-full">
                 <div className="flex items-center mb-6">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${category.color} flex items-center justify-center mr-4`}>
                     <category.icon className="w-6 h-6 text-white" />
@@ -191,7 +191,7 @@ export default function ResourcesPage() {
                   </div>
                 </div>
                 
-                <div className="space-y-3">
+                <div className="space-y-3 flex-grow">
                   {category.resources.map((resource, index) => (
                     <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                       <div>

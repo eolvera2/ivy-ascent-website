@@ -223,7 +223,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {services.map((service) => (
-              <div key={service.name} className="card p-8 group">
+              <div key={service.name} className="card p-8 group flex flex-col h-full">
                 <div className="flex items-start space-x-4 mb-6">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${service.color} flex items-center justify-center flex-shrink-0`}>
                     <service.icon className="w-6 h-6 text-white" />
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-6 flex-grow">
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">What&apos;s Included:</h4>
                     <ul className="space-y-2">
@@ -254,16 +254,16 @@ export default function ServicesPage() {
                     <h4 className="font-semibold text-gray-900 mb-3">Perfect For:</h4>
                     <p className="text-sm text-gray-600">{service.ideal}</p>
                   </div>
+                </div>
 
-                  <div className="pt-4 border-t border-gray-100">
-                    <Link
-                      href="/consultation"
-                      className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 group-hover:shadow-lg"
-                    >
-                      Book Consultation
-                      <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
+                <div className="pt-4 border-t border-gray-100 mt-auto">
+                  <Link
+                    href="/consultation"
+                    className="inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-gray-600 to-gray-700 rounded-lg hover:from-primary-600 hover:to-primary-700 transition-all duration-300 group-hover:shadow-lg"
+                  >
+                    Book Consultation
+                    <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -285,7 +285,7 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 max-w-4xl mx-auto">
             {packages.map((pkg) => (
-              <div key={pkg.name} className="card p-8 border-2 border-primary-200 relative">
+              <div key={pkg.name} className="card p-8 border-2 border-primary-200 relative flex flex-col h-full">
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <div className="inline-flex items-center px-4 py-1 rounded-full text-sm font-semibold bg-primary-600 text-white">
                     <StarIcon className="w-4 h-4 mr-1" />
@@ -301,7 +301,7 @@ export default function ServicesPage() {
                   <p className="text-gray-600 mt-2">{pkg.description}</p>
                 </div>
 
-                <div className="mb-6">
+                <div className="mb-6 flex-grow">
                   <h4 className="font-semibold text-gray-900 mb-3">Package Includes:</h4>
                   <ul className="space-y-2">
                     {pkg.includes.map((item, index) => (
@@ -319,7 +319,7 @@ export default function ServicesPage() {
 
                 <Link
                   href="/consultation"
-                  className="block w-full text-center px-6 py-3 rounded-lg font-semibold bg-primary-600 text-white hover:bg-primary-700 transition-colors"
+                  className="block w-full text-center px-6 py-3 rounded-lg font-semibold bg-primary-600 text-white hover:bg-primary-700 transition-colors mt-auto"
                 >
                   Choose This Package
                 </Link>
