@@ -1,29 +1,14 @@
 {
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/static/*", "/_next/*", "/favicon.ico"]
+  },
   "routes": [
     {
-      "route": "/*",
-      "serve": "/404.html",
-      "statusCode": 404
+      "route": "/_next/static/*",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
     }
-  ],
-  "navigationFallback": {
-    "rewrite": "/404.html",
-    "exclude": [
-      "*.{css,scss,sass}",
-      "*.{js,jsx}",
-      "*.{ts,tsx}",
-      "*.{png,jpg,jpeg,gif,bmp}",
-      "*.{svg}",
-      "*.ico",
-      "*.json"
-    ]
-  },
-  "mimeTypes": {
-    ".json": "application/json",
-    ".js": "text/javascript",
-    ".css": "text/css"
-  },
-  "globalHeaders": {
-    "Cache-Control": "no-cache"
-  }
+  ]
 }
